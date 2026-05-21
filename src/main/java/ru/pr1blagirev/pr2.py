@@ -6,6 +6,18 @@ OUTPUT_FILE = "output.txt"
 
 
 
+def normalize_phone(value: str) -> str:
+    digits = re.sub(r"\D", "", value)
+
+    if len(digits) == 11 and digits[0] in ("7", "8"):
+        digits = "7" + digits[1:]
+    elif len(digits) == 10:
+        digits = "7" + digits
+    else:
+        return ""
+
+    return f"+7 ({digits[1:4]}) {digits[4:]}"
+
 
 def normalize_email(value: str) -> str:
     value = value.strip().lower()
@@ -26,7 +38,7 @@ def process_line(line: str) -> str:
 
     name = parts[0]
     age = parts[1]
-    phone = parts[2]
+    phone = normalize_phone(parts[2])
     email = normalize_email(parts[3])
 
     return f"{name}|{age}|{phone}|{email}"

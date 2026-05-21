@@ -1,0 +1,35 @@
+[33mcommit 46ef704d11e0335526eb6fe075c38adf3e804427[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: queerxdisasster <7germania7@gmail.com>
+Date:   Fri May 22 00:11:24 2026 +0300
+
+    email normalization
+
+[33mcommit f7168bba5feda690862a062693ceda6d60c2ac00[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: queerxdisasster <7germania7@gmail.com>
+Date:   Thu Apr 23 21:35:28 2026 +0300
+
+    Trigger build
+
+[33mcommit 646fef91c32c41239c59e2130b9fb37e2293bb97[m
+Author: queerxdisasster <7germania7@gmail.com>
+Date:   Thu Apr 23 21:30:17 2026 +0300
+
+    Add GitHub Actions CI with SonarCloud
+
+[33mcommit f895db4deee5d46c3be943e228207634141532f5[m
+Author: queerxdisasster <7germania7@gmail.com>
+Date:   Thu Apr 23 21:15:54 2026 +0300
+
+    Trigger Travis
+
+[33mcommit 5949910f277d62ba505586960e92a94e8575a886[m
+Author: queerxdisasster <7germania7@gmail.com>
+Date:   Thu Apr 23 20:58:14 2026 +0300
+
+    Trigger CI
+
+[33mcommit 4dd6dce0c3b460149bc5b0276b932813c292ed2e[m
+Author: queerxdisasster <7germania7@gmail.com>
+Date:   Thu Apr 23 20:27:49 2026 +0300
+
+    Initial commit: Java 17 + Travis + SonarCloud
