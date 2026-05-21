@@ -4,6 +4,31 @@ INPUT_FILE = "input.txt"
 OUTPUT_FILE = "output.txt"
 
 
+def normalize_name(value: str) -> str:
+    value = re.sub(r"[^A-Za-zА-Яа-яЁё\s-]", "", value).strip()
+    value = re.sub(r"\s+", " ", value)
+
+    if " " not in value:
+        match = re.match(r"^([А-ЯЁ][а-яё]+)([А-ЯЁ][а-яё]+)$", value)
+        if match:
+            value = f"{match.group(1)} {match.group(2)}"
+
+    parts = value.split()
+    if len(parts) != 2:
+        return ""
+
+    return " ".join(part.capitalize() for part in parts)
+
+
+def normalize_age(value: str) -> str:
+    value = value.strip()
+    if not re.fullmatch(r"\d{1,3}", value):
+        return ""
+
+    age = int(value)
+    if 1 <= age <= 120:
+        return str(age)
+    return ""
 
 
 def normalize_phone(value: str) -> str:
@@ -36,8 +61,8 @@ def process_line(line: str) -> str:
     while len(parts) < 4:
         parts.append("")
 
-    name = parts[0]
-    age = parts[1]
+    name = normalize_name(parts[0])
+    age = normalize_age(parts[1])
     phone = normalize_phone(parts[2])
     email = normalize_email(parts[3])
 
